@@ -1,18 +1,5 @@
 FROM fedora:35
 
-ARG ARCH=x86_64
-
-# Fill out the labels
-LABEL name="heat-container-agent" \
-      maintainer="Spyros Trigazis <strigazi@gmail.com>" \
-      license="UNKNOWN" \
-      summary="Heat Container Agent system image" \
-      version="1.0" \
-      help="No help" \
-      architecture=$ARCH \
-      atomic.type="system" \
-      distribution-scope="public"
-
 RUN dnf -y --setopt=tsflags=nodocs --nogpgcheck install \
         bash \
         findutils \
